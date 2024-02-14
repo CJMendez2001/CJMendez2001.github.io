@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Electronicstore</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="recursos/Logo.png" alt="Logo" height="40" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#productos">Productos</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="cart-link" data-bs-toggle="modal"
+                            data-bs-target="#carritoModal">
+                            <i class="bi bi-cart-fill"></i> Carrito (0)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="py-5 bg-primary text-light text-center" style="margin-top: 60px;">
+        <div class="container">
+            <h1 class="display-4">¡Bienvenido a Electronicstore!</h1>
+            <p class="lead">Tu destino para encontrar las mejores computadoras y accesorios.</p>
+            <p>Explora nuestra amplia gama de productos de alta calidad y elige los dispositivos perfectos para tus necesidades.</p>
+        </div>
+    </section>
+    
+    
+    
+    
+
+    <section id="productos">
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="recursos/laptop.jpg" class="card-img-top" alt="Producto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Laptop HP</h5>
+                            <p class="card-text">L25,000.00</p>
+                            <button class="btn btn-primary" onclick="agregarAlCarrito('Producto 1', 100.00)">Agregar al
+                                carrito</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="recursos/enfriador.jpg" class="card-img-top" alt="Producto 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Enfriador</h5>
+                            <p class="card-text">L150.00</p>
+                            <button class="btn btn-primary" onclick="agregarAlCarrito('Producto 2', 150.00)">Agregar al
+                                carrito</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="recursos/impresora.jpeg" class="card-img-top" alt="Producto 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Impresora Epson</h5>
+                            <p class="card-text">L2,399.00</p>
+                            <button class="btn btn-primary" onclick="agregarAlCarrito('Producto 3', 150.00)">Agregar al
+                                carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="recursos/audifonos.jpg" class="card-img-top" alt="Producto 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Headphones</h5>
+                            <p class="card-text">L799.00</p>
+                            <button class="btn btn-primary" onclick="agregarAlCarrito('Producto 3', 150.00)">Agregar al
+                                carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="recursos/microfono.jpg" class="card-img-top" alt="Producto 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Micrófono</h5>
+                            <p class="card-text">L1,299.00</p>
+                            <button class="btn btn-primary" onclick="agregarAlCarrito('Producto 3', 150.00)">Agregar al
+                                carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="recursos/silla.jpg" class="card-img-top" alt="Producto 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Silla tipo Gaming</h5>
+                            <p class="card-text">L3,498.00</p>
+                            <button class="btn btn-primary" onclick="agregarAlCarrito('Producto 3', 150.00)">Agregar al
+                                carrito</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+    <footer class="bg-dark text-light text-center py-3">
+        <p>&copy; 2024 Electronicstore</p>
+    </footer>
+    <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="carritoModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="listaCarrito" class="list-group">
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="realizarCompra()">Realizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let carrito = [];
+
+function actualizarCarrito() {
+    const cantidadProductos = carrito.length;
+    document.getElementById('cart-link').innerText = `Carrito (${cantidadProductos})`;
+
+    
+    const listaCarrito = document.getElementById('listaCarrito');
+    listaCarrito.innerHTML = '';
+    carrito.forEach((producto, index) => {
+        const listItem = document.createElement('li');
+        listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+        listItem.innerHTML = `
+            ${producto.nombre} - $${producto.precio.toFixed(2)}
+            <button class="btn btn-danger btn-sm" onclick="eliminarDelCarrito(${index})">Eliminar</button>
+        `;
+        listaCarrito.appendChild(listItem);
+    });
+}
+
+function agregarAlCarrito(nombre, precio) {
+    carrito.push({
+        nombre: nombre,
+        precio: precio
+    });
+    actualizarCarrito();
+    alert(`${nombre} agregado al carrito.`);
+}
+
+function eliminarDelCarrito(index) {
+    carrito.splice(index, 1);
+    actualizarCarrito();
+}
+
+function realizarCompra() {
+    alert('Compra realizada con éxito. Gracias por su compra.');
+    carrito = []; 
+    actualizarCarrito();
+    document.getElementById('carritoModal').classList.remove('show');
+    document.body.classList.remove('modal-open');
+    document.getElementsByClassName('modal-backdrop')[0].remove();
+}
+    </script>
+</body>
+
+</html>
+
